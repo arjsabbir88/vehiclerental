@@ -14,10 +14,10 @@ app.use(express.json());
 initDB();
 
 // created user in db
-app.use("/users", userRouter.router);
+// app.use("/api/v1/auth/signup", userRouter.router);
 
-// get all user from the db
-app.use("/users", userRouter.router);
+// get all user from the db and this is admin accessable api
+app.use("/api/v1/users", userRouter.router);
 
 // this is root path respons on server
 app.get("/", (req: Request, res: Response) => {

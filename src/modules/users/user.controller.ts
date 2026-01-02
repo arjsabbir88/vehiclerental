@@ -128,4 +128,5 @@ export const userController = {
   getUsers,
   getSingleUser,
   updateUser,
+  deleteUser
 };

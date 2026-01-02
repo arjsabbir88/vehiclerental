@@ -31,7 +31,7 @@ const updateUser = async (
   id: string
 ) => {
   const result = await pool.query(
-    `UPDATE public_users SET name=$1,email=$2,phone=$3 WHERE id=$4 RETURNING id,name,email,phone,role`,
+    `UPDATE users SET name=$1,email=$2,phone=$3 WHERE id=$4 RETURNING id,name,email,phone,role`,
     [name, email, phone, id]
   );
 

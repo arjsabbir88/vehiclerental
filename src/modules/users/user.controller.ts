@@ -75,7 +75,6 @@ const getSingleUser = async (req: Request, res: Response) => {
 const updateUser = async (req: Request, res: Response) => {
   const { name, email, phone } = req.body;
 
-  console.log(name, email, phone);
 
   try {
     const result = await userService.updateUser(
@@ -118,8 +117,8 @@ const deleteUser = async (req: Request, res: Response) => {
   }
 
   res.status(200).json({
-  "success": true,
-  "message": "User deleted successfully"
+  success: true,
+  message: "User deleted successfully"
 });
 };
 

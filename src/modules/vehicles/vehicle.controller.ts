@@ -36,6 +36,8 @@ const createVehicle = async (req: Request, res: Response) => {
 
     const result = await vehicleService.createVehicle(req.body);
 
+  
+
     res.status(201).json({
       success: true,
       message: "Vehicle created successfully",

@@ -75,6 +75,25 @@ const getSingleUser = async (req: Request, res: Response) => {
 const updateUser = async (req: Request, res: Response) => {
   const { name, email, phone } = req.body;
 
+  const user = req.user;
+
+  if(!user){
+    return res.status(401).json({
+      success: false,
+      message: "Unothorized"
+    })
+  }
+
+
+  if(user.role!=="admin"){
+    if(req.params.id !==user.id){
+      return res.status(403).json({
+        success:false,
+        message: "User can only updae own profile",
+      })
+    }
+  }
+
 
   try {
     const result = await userService.updateUser(
